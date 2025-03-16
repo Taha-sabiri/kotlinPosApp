@@ -32,12 +32,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.style.TextDirection
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -47,25 +43,26 @@ import com.example.myapplication.ui.theme.PR_TEXT_GRAY20
 
 @Composable
 
-fun LoginView(navController:NavController) {
-    var mobile:String by remember {
+fun LoginView(navController: NavController) {
+    var mobile: String by remember {
         mutableStateOf("")
     }
 
     Scaffold(
-floatingActionButtonPosition = FabPosition.Center,
+        floatingActionButtonPosition = FabPosition.Center,
         floatingActionButton = {
-        ExtendedFloatingActionButton(
+            ExtendedFloatingActionButton(
 
-            content = { Text(text = "ورود" ) },
-            onClick = { navController.navigate("home")},
-            elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp),
-            containerColor = PR_PURPLE,
-            contentColor = Color.White,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 20.dp))
-    }) { paddingValues ->
+                content = { Text(text = "ورود") },
+                onClick = { navController.navigate("home") },
+                elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp),
+                containerColor = PR_PURPLE,
+                contentColor = Color.White,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+            )
+        }) { paddingValues ->
         Box(
             modifier = Modifier
                 .padding(paddingValues)
@@ -106,7 +103,7 @@ floatingActionButtonPosition = FabPosition.Center,
                 Spacer(modifier = Modifier.height(20.dp))
                 TextField(
                     value = mobile,
-                    onValueChange = {mobile=it},
+                    onValueChange = { mobile = it },
                     modifier = Modifier.fillMaxWidth(),
                     colors = TextFieldDefaults.colors(),
 
@@ -122,10 +119,13 @@ floatingActionButtonPosition = FabPosition.Center,
                     },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
                 )
-                Row(horizontalArrangement=Arrangement.Center , verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
 
-                    Checkbox(checked = true, onCheckedChange ={res->{}})
-                    Text(text = "قوانین و شرایط را خوانده و قبول دارم" , color = PR_TEXT_GRAY20)
+                    Checkbox(checked = true, onCheckedChange = { res -> {} })
+                    Text(text = "قوانین و شرایط را خوانده و قبول دارم", color = PR_TEXT_GRAY20)
                 }
 
             }

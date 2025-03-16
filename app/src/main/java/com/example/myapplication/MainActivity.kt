@@ -21,11 +21,10 @@ class MainActivity : ComponentActivity() {
         val config = resources.configuration
         config.setLocale(locale)
         config.setLayoutDirection(locale)
+
+
         setContent {
-            MyApplicationTheme() {
-                PaymentView()
-            }
-//            PaymentView()
+            AppNavigation()
         }
     }
 }
@@ -42,6 +41,7 @@ fun AppNavigation() {
             composable("login") { LoginView(navController) }
             composable("home") { HomeView(navController) }
             composable("price") { PriceView(navController) }
+            composable ("payment") { PaymentView(navController) }
             // Add more destinations similarly.
         }
     }

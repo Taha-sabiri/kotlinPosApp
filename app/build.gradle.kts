@@ -48,6 +48,7 @@ android {
 }
 
 dependencies {
+//    implementation(libs.androidx.material3.android)
     val nav_version = "2.8.8"
 
 
@@ -65,7 +66,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("io.coil-kt.coil3:coil-compose:3.0.0")
    implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.0")
-    implementation("io.coil-kt:coil-gif:2.6.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
